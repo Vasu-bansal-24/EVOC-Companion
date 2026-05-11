@@ -84,52 +84,58 @@ export const processSteps: ProcessStep[] = [
 
 export const testimonials: Testimonial[] = [
   {
-    name: "Sarah Mitchell",
-    role: "Mindset Coach",
-    content:
-      "Companion completely transformed my business. I went from chasing leads on Instagram to having a fully automated system that books 15+ calls per week.",
-    metric: "320%",
-    metricLabel: "Increase in Booked Calls",
-  },
-  {
-    name: "James Rivera",
-    role: "Fitness Coach",
-    content:
-      "Before Companion, I was spending hours on manual follow-ups. Now my CRM handles everything and I can focus on coaching my clients.",
-    metric: "$47K",
-    metricLabel: "Monthly Revenue",
-  },
-  {
-    name: "Priya Sharma",
+    name: "Vikram Desai",
     role: "Business Coach",
     content:
-      "The funnel they built converts at 12%. My ad spend went from being a gamble to a predictable investment with clear ROI.",
-    metric: "12%",
-    metricLabel: "Funnel Conversion Rate",
+      "Companion completely transformed how I get clients. Earlier I was relying on referrals, but now the automated system gets me 15+ qualified leads every week. It's been a game-changer.",
+    metric: "320%",
+    metricLabel: "Increase in Booked Calls",
+    image: "https://randomuser.me/api/portraits/men/45.jpg",
   },
   {
-    name: "David Chen",
+    name: "Ananya Sharma",
+    role: "Fitness & Nutrition Coach",
+    content:
+      "Before Companion, I was spending hours following up on WhatsApp and DMs. Now the CRM handles everything and my pipeline is always full. I can finally focus just on coaching my clients.",
+    metric: "₹1.4 Lakhs",
+    metricLabel: "Monthly Revenue",
+    image: "https://randomuser.me/api/portraits/women/43.jpg",
+  },
+  {
+    name: "Karan Singhania",
     role: "Executive Coach",
     content:
-      "I was skeptical about agencies, but Companion delivered in the first 30 days. My pipeline is now consistently full of qualified prospects.",
-    metric: "4.2x",
-    metricLabel: "Return on Ad Spend",
+      "The funnel they built converts incredibly well. My Meta ads spend went from being a complete gamble to a predictable investment. The ROI has been absolutely phenomenal.",
+    metric: "12%",
+    metricLabel: "Funnel Conversion Rate",
+    image: "https://randomuser.me/api/portraits/men/22.jpg",
   },
   {
-    name: "Rachel Thompson",
-    role: "Health & Wellness Coach",
+    name: "Rajat Kapoor",
+    role: "Mindset Coach",
     content:
-      "The automation systems they set up save me 20+ hours a week. Every lead gets nurtured and I only talk to people who are ready to buy.",
+      "I was very skeptical about hiring an agency, but these guys delivered within the first 30 days. My calendar is now consistently packed with high-ticket prospects who are actually ready to invest.",
+    metric: "4.5x",
+    metricLabel: "Return on Ad Spend",
+    image: "https://randomuser.me/api/portraits/men/73.jpg",
+  },
+  {
+    name: "Neha Gupta",
+    role: "Career Transition Coach",
+    content:
+      "The automation workflows save me at least 20 hours a week. Every lead is nurtured properly, and I only jump on a call when they are fully pre-framed and ready to buy.",
     metric: "20hrs",
     metricLabel: "Saved Per Week",
+    image: "https://randomuser.me/api/portraits/women/34.jpg",
   },
   {
-    name: "Marcus Johnson",
-    role: "Career Coach",
+    name: "Rahul Verma",
+    role: "Life Coach",
     content:
-      "Companion helped me go from $8K to $35K months in 90 days. Their systems approach to client acquisition is unlike anything I've seen.",
-    metric: "$35K",
+      "Companion helped me scale from struggling to get clients to hitting ₹1.2 Lakhs a month in just 90 days. Their systems-driven approach to client acquisition is honestly unmatched in the Indian market.",
+    metric: "₹1.2 Lakhs",
     metricLabel: "Monthly Revenue in 90 Days",
+    image: "https://randomuser.me/api/portraits/men/60.jpg",
   },
 ];
 

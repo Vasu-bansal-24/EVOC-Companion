@@ -152,10 +152,14 @@ export function TestimonialsSection() {
 
             {/* Author */}
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/20 to-purple-500/20 flex items-center justify-center">
-                <span className="text-sm font-semibold text-primary">
-                  {testimonial.name.charAt(0)}
-                </span>
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/20 to-purple-500/20 flex items-center justify-center overflow-hidden border border-border/50">
+                {testimonial.image ? (
+                  <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" loading="lazy" />
+                ) : (
+                  <span className="text-sm font-semibold text-primary">
+                    {testimonial.name.charAt(0)}
+                  </span>
+                )}
               </div>
               <div>
                 <div className="text-sm font-medium">{testimonial.name}</div>

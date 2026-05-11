@@ -11,6 +11,7 @@ export interface Testimonial {
   content: string;
   metric: string;
   metricLabel: string;
+  image?: string;
 }
 
 export interface FAQItem {
