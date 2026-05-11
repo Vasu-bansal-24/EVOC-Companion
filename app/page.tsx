@@ -13,11 +13,11 @@ export default function HomePage() {
     <>
       <HeroSection />
       <TrustBar />
+      <TestimonialsSection />
       <ServicesSection />
       <TransformationSection />
       <ProcessSection />
       <WhyChooseUsSection />
-      <TestimonialsSection />
       <FAQSection />
       <CTASection />
     </>
