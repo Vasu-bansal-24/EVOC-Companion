@@ -38,8 +38,91 @@ export function TestimonialsSection() {
         </motion.p>
       </div>
 
+      {/* Visual Results */}
+      <div className="space-y-12 mb-24 mt-12">
+        {/* Subsection 1: Appointment Booking */}
+        <div>
+          <div className="flex items-center justify-center gap-4 px-4 md:px-0 mb-6">
+            <div className="h-[2px] w-12 bg-primary/40 rounded-full" />
+            <h3 className="text-xl md:text-2xl font-semibold text-foreground/90 tracking-tight">Appointment Booking</h3>
+            <div className="h-[2px] w-12 bg-primary/40 rounded-full" />
+          </div>
+          
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 px-4 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            {[1, 2, 3].map((i, index) => (
+              <motion.div 
+                key={`calendar-${i}`}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="flex-none w-[85vw] sm:w-[calc(50%-8px)] md:w-[calc(33.333%-10.66px)] snap-center group"
+              >
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-border/40 bg-card/30 shadow-sm group-hover:shadow-primary/20 group-hover:border-primary/40 transition-all duration-500">
+                  {/* Theme blending overlay */}
+                  <div className="absolute inset-0 bg-background/30 mix-blend-multiply dark:mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-500 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent z-10 group-hover:opacity-0 transition-opacity duration-500 pointer-events-none" />
+                  
+                  <img 
+                    src={`/Calendar${i}.jpg`} 
+                    alt={`Calendar Result ${i}`}
+                    className="w-full h-full object-cover opacity-75 saturate-[0.6] brightness-[0.8] group-hover:opacity-100 group-hover:saturate-100 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700"
+                    loading="lazy"
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Subsection 2: Lead Generation Campaign */}
+        <div>
+          <div className="flex items-center justify-center gap-4 px-4 md:px-0 mb-6">
+            <div className="h-[2px] w-12 bg-primary/40 rounded-full" />
+            <h3 className="text-xl md:text-2xl font-semibold text-foreground/90 tracking-tight">Lead Generation Campaigns</h3>
+            <div className="h-[2px] w-12 bg-primary/40 rounded-full" />
+          </div>
+          
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 px-4 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            {[
+              "Lead Campaign1.png",
+              "Lead Campaign2.jpg",
+              "Lead Campaign3.jpg",
+              "Lead Campaign4.jpg",
+              "Lead Campaign5.jpg"
+            ].map((imgName, index) => (
+              <motion.div 
+                key={`lead-${index}`}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="flex-none w-[85vw] sm:w-[calc(50%-8px)] md:w-[calc(33.333%-10.66px)] snap-center group"
+              >
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-border/40 bg-card/30 shadow-sm group-hover:shadow-primary/20 group-hover:border-primary/40 transition-all duration-500">
+                  {/* Theme blending overlay */}
+                  <div className="absolute inset-0 bg-background/30 mix-blend-multiply dark:mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-500 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent z-10 group-hover:opacity-0 transition-opacity duration-500 pointer-events-none" />
+                  
+                  <img 
+                    src={`/${imgName}`} 
+                    alt={`Lead Campaign Result ${index + 1}`}
+                    className="w-full h-full object-cover opacity-75 saturate-[0.6] brightness-[0.8] group-hover:opacity-100 group-hover:saturate-100 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700"
+                    loading="lazy"
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="text-center mb-16 mt-32">
+        <h3 className="text-2xl md:text-3xl font-bold">What Our Clients Say</h3>
+      </div>
+
       {/* Testimonial Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-0">
         {testimonials.map((testimonial, index) => (
           <motion.div
             key={testimonial.name}

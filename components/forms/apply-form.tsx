@@ -11,11 +11,11 @@ import { toast } from "sonner";
 // Simplified Zod schema for a shorter, one-page form
 const formSchema = z.object({
   fullName: z.string().min(2, "Name is required"),
-  email: z.string().email("Valid email is required"),
+  alternateMobile: z.string().optional(),
   whatsapp: z.string().min(6, "WhatsApp number is required"),
-  businessName: z.string().min(2, "Business name is required"),
+  businessName: z.string().optional(),
   instagram: z.string().optional(),
-  revenue: z.string().min(1, "Please select your revenue"),
+  adBudget: z.string().min(1, "Please select your daily ad budget"),
   goals: z.string().optional(),
   services: z.array(z.string()).min(1, "Select at least one service"),
 });
@@ -29,12 +29,11 @@ const serviceOptions = [
   "Full System Setup",
 ];
 
-const revenueOptions = [
-  "Under $5K/month",
-  "$5K–$10K/month",
-  "$10K–$25K/month",
-  "$25K–$50K/month",
-  "$50K+/month",
+const adBudgetOptions = [
+  "₹300 - ₹500",
+  "₹500 - ₹800",
+  "₹800 - ₹1000",
+  "₹1000+",
 ];
 
 export function ApplyForm() {
@@ -51,11 +50,11 @@ export function ApplyForm() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       fullName: "",
-      email: "",
+      alternateMobile: "",
       whatsapp: "",
       businessName: "",
       instagram: "",
-      revenue: "",
+      adBudget: "",
       goals: "",
       services: [],
     },
@@ -153,16 +152,12 @@ export function ApplyForm() {
           )}
         </div>
         <div>
-          <label className={labelClasses}>Email Address *</label>
+          <label className={labelClasses}>Alternate Mobile Number</label>
           <input
-            {...register("email")}
-            type="email"
-            placeholder="john@example.com"
+            {...register("alternateMobile")}
+            placeholder="+1 234 567 8900"
             className={inputClasses}
           />
-          {errors.email && (
-            <p className={errorClasses}>{errors.email.message}</p>
-          )}
         </div>
       </div>
 
@@ -179,15 +174,12 @@ export function ApplyForm() {
           )}
         </div>
         <div>
-          <label className={labelClasses}>Business/Brand Name *</label>
+          <label className={labelClasses}>Business/Brand Name</label>
           <input
             {...register("businessName")}
             placeholder="Coaching Co."
             className={inputClasses}
           />
-          {errors.businessName && (
-            <p className={errorClasses}>{errors.businessName.message}</p>
-          )}
         </div>
       </div>
 
@@ -201,17 +193,17 @@ export function ApplyForm() {
           />
         </div>
         <div>
-          <label className={labelClasses}>Current Monthly Revenue *</label>
-          <select {...register("revenue")} className={inputClasses}>
+          <label className={labelClasses}>Daily Ad Budget *</label>
+          <select {...register("adBudget")} className={inputClasses}>
             <option value="">Select range</option>
-            {revenueOptions.map((opt) => (
+            {adBudgetOptions.map((opt) => (
               <option key={opt} value={opt}>
                 {opt}
               </option>
             ))}
           </select>
-          {errors.revenue && (
-            <p className={errorClasses}>{errors.revenue.message}</p>
+          {errors.adBudget && (
+            <p className={errorClasses}>{errors.adBudget.message}</p>
           )}
         </div>
       </div>
